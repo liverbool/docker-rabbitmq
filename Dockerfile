@@ -1,5 +1,14 @@
 FROM ubuntu:trusty
-MAINTAINER Fernando Mayo <fernando@tutum.co>
+MAINTAINER Fernando Mayo <fernando@tutum.co>, Liverbool "nukboon@gmail.com"
+
+# Install packages
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN locale-gen en_US.UTF-8
+RUN export LANG=en_US.UTF-8
+RUN export LC_ALL=en_US.UTF-8
+
+RUN timedatectl set-timezone Asia/Bangkok
 
 # Install RabbitMQ
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F7B8CEA6056E8E56 && \
